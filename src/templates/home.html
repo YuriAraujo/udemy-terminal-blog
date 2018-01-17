@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Welcome to the Web Blog</h2>
+    <h3><a href="/blogs">Blogs</a></h3>
+    <hr>
+    <h3><a href="/login">Login</a></h3>
+    <hr>
+    <h3><a href="/register">Register</a></h3>
+    <hr>
+        {% if blog_id is not none %}
+            <h3><a href="/posts/{{ blog_id }}">Posts</a></h3>
+        {% else %}
+            <h3>Not logged in!</h3>
+            <hr>
+            <h2><a href="/">Home</a></h2>
+        {% endif %}
+</div>
+{% endblock %}
